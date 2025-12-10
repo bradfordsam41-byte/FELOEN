@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Details - FELOEN</title>
-    <link rel="stylesheet" href="css/vscode.css">
-    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/vscode.css" />
+    <link rel="stylesheet" href="css/product.css" />
     <script src="js/product.js" defer></script>
-</head>
+  </head>
 
-<body>
-<header>
-    <div id="banner">
+  <body>
+    <header>
+      <div id="banner">
         <img src="assests/png/FELOEN.png" class="logo" />
         <img src="assests/png/FELOEN.png" class="logo" />
         <img src="assests/png/FELOEN.png" class="logo" />
@@ -33,90 +36,116 @@
         <img src="assests/png/FELOEN.png" class="logo" />
         <img src="assests/png/FELOEN.png" class="logo" />
         <img src="assests/png/FELOEN.png" class="logo" />
-    </div>
+      </div>
 
-    <style>
+      <style>
         #banner {
-            white-space: nowrap;
-            overflow: hidden;
+          white-space: nowrap;
+          overflow: hidden;
         }
         .logo {
-            display: inline-block;
-            width: 275px;
-            animation: scroll 10s linear infinite;
+          display: inline-block;
+          width: 275px;
+          animation: scroll 10s linear infinite;
         }
         @keyframes scroll {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
         }
-    </style>
-</header>
+      </style>
+    </header>
 
-<!-- Product Detail Section -->
-<section class="product-detail-section">
-    <div class="product-detail-container">
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+      <div class="product-detail-container">
         <!-- Product Images -->
         <div class="product-images">
-            <div class="main-image">
-                <img id="mainProductImage" src="assests/png/SUADEJACKETFRONT.png" alt="Product Image">
-            </div>
-            <div class="thumbnail-images">
-                <img class="thumbnail active" src="assests/png/SUADEJACKETFRONT.png" alt="Thumbnail 1" data-index="0">
-                <img class="thumbnail" src="assests/png/SUADEJACKETFRONT.png" alt="Thumbnail 2" data-index="1">
-                <img class="thumbnail" src="assests/png/SUADEJACKETFRONT.png" alt="Thumbnail 3" data-index="2">
-                <img class="thumbnail" src="assests/png/SUADEJACKETFRONT.png" alt="Thumbnail 4" data-index="3">
-            </div>
+          <div class="main-image">
+            <img
+              id="mainProductImage"
+              src="assests/png/SUADEJACKETFRONT.png"
+              alt="Product Image"
+            />
+          </div>
+          <div class="thumbnail-images">
+            <img
+              class="thumbnail active"
+              src="assests/png/SUADEJACKETFRONT.png"
+              alt="Thumbnail 1"
+              data-index="0"
+            />
+            <img
+              class="thumbnail"
+              src="assests/png/SUADEJACKETFRONT.png"
+              alt="Thumbnail 2"
+              data-index="1"
+            />
+            <img
+              class="thumbnail"
+              src="assests/png/SUADEJACKETFRONT.png"
+              alt="Thumbnail 3"
+              data-index="2"
+            />
+            <img
+              class="thumbnail"
+              src="assests/png/SUADEJACKETFRONT.png"
+              alt="Thumbnail 4"
+              data-index="3"
+            />
+          </div>
         </div>
 
         <!-- Product Info -->
         <div class="product-info-detail">
-            <h1 id="productName">SUADE JACKET</h1>
-            <p class="product-category" id="productCategory">JACKET</p>
-            <div class="product-price-detail" id="productPrice">$0.00</div>
-            
-            <div class="product-description">
-                <h3>Description</h3>
-                <p id="productDescription">Product description goes here...</p>
+          <h1 id="productName">SUADE JACKET</h1>
+          <p class="product-category" id="productCategory">JACKET</p>
+          <div class="product-price-detail" id="productPrice">$0.00</div>
+
+          <div class="product-description">
+            <h3>Description</h3>
+            <p id="productDescription">Product description goes here...</p>
+          </div>
+
+          <div class="product-options">
+            <div class="size-selector">
+              <h3>Size</h3>
+              <div class="size-buttons">
+                <button class="size-btn">XS</button>
+                <button class="size-btn">S</button>
+                <button class="size-btn active">M</button>
+                <button class="size-btn">L</button>
+                <button class="size-btn">XL</button>
+                <button class="size-btn">XXL</button>
+              </div>
             </div>
 
-            <div class="product-options">
-                <div class="size-selector">
-                    <h3>Size</h3>
-                    <div class="size-buttons">
-                        <button class="size-btn">XS</button>
-                        <button class="size-btn">S</button>
-                        <button class="size-btn active">M</button>
-                        <button class="size-btn">L</button>
-                        <button class="size-btn">XL</button>
-                        <button class="size-btn">XXL</button>
-                    </div>
-                </div>
-
-
-                <div class="quantity-selector">
-                    <h3>Quantity</h3>
-                    <div class="quantity-controls">
-                        <button class="qty-btn" id="decreaseQty">-</button>
-                        <input type="number" id="quantity" value="1" min="1" max="10">
-                        <button class="qty-btn" id="increaseQty">+</button>
-                    </div>
-                </div>
+            <div class="quantity-selector">
+              <h3>Quantity</h3>
+              <div class="quantity-controls">
+                <button class="qty-btn" id="decreaseQty">-</button>
+                <input type="number" id="quantity" value="1" min="1" max="10" />
+                <button class="qty-btn" id="increaseQty">+</button>
+              </div>
             </div>
+          </div>
 
-            <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
+          <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
 
-            <div class="product-details-info">
-                <h3>Product Details</h3>
-                <ul>
-                    <li>100% Premium Cotton</li>
-                    <li>Machine Washable</li>
-                    <li>Relaxed Fit</li>
-                    <li>Imported</li>
-                </ul>
-            </div>
+          <div class="product-details-info">
+            <h3>Product Details</h3>
+            <ul>
+              <li>100% Premium Cotton</li>
+              <li>Machine Washable</li>
+              <li>Relaxed Fit</li>
+              <li>Imported</li>
+            </ul>
+          </div>
         </div>
-    </div>
-</section>
-
-</body>
+      </div>
+    </section>
+  </body>
 </html>
