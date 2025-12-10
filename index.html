@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FELOEN - Premium Fashion</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/vscode.css">
+    <script src="js/vscode.js" defer></script>
+</head>
+
+<body>
+<header>
+    <div id="banner">
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+        <img src="FELOEN.png" class="logo" />
+    </div>
+
+    <style>
+        #banner {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .logo {
+            display: inline-block;
+            width: 275px;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+    </style>
+
+    <!-- Fixed Top Right Menu Button -->
+    <button class="fixed-menu-btn" id="fixedMenuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Half Screen Slide Panel -->
+    <div class="slide-panel" id="slidePanel">
+        <button class="slide-panel-close" id="closePanelBtn">&times;</button>
+        <div class="slide-panel-content">
+            <!-- Home Section -->
+            <div class="slide-panel-section">
+                <a href="index.html" class="slide-panel-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Home
+                </a>
+            </div>
+
+            <!-- Cart Section -->
+            <div class="slide-panel-section">
+                <a href="checkout.html" class="slide-panel-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    Cart
+                    <span class="slide-panel-badge" id="slidePanelCartCount">0</span>
+                </a>
+            </div>
+
+            <!-- Collections Section -->
+            <div class="slide-panel-section">
+                <a href="#collections" class="slide-panel-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    Collections
+                </a>
+            </div>
+
+            <!-- Shop Section -->
+            <div class="slide-panel-section">
+                <a href="tshirts.html" class="slide-panel-sublink">T-Shirts</a>
+                <a href="hoodies.html" class="slide-panel-sublink">Hoodies</a>
+                <a href="jackets.html" class="slide-panel-sublink">Jackets</a>
+                <a href="pants.html" class="slide-panel-sublink">Pants</a>
+                <a href="accessories.html" class="slide-panel-sublink">Accessories</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel Overlay -->
+    <div class="panel-overlay" id="panelOverlay"></div>
+
+    <!-- Cart Notification Popup -->
+    <div class="cart-notification" id="cartNotification">
+        <div class="cart-notification-header">
+            <h3>Added to Cart</h3>
+            <button class="cart-notification-close" id="cartNotificationClose">&times;</button>
+        </div>
+        <div class="cart-notification-body">
+            <div class="cart-notification-item" id="cartNotificationItem">
+                <!-- Product info will be inserted here -->
+            </div>
+            <div class="cart-notification-actions">
+                <button class="cart-notification-btn secondary" id="continueShoppingBtn">Continue</button>
+                <a href="checkout.html" class="cart-notification-btn primary">Checkout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dropdown Overlay -->
+    <div class="dropdown-overlay" id="dropdownOverlay"></div>
+
+    <!-- Full Screen Dropdown Menu -->
+    <div class="nav-dropdown" id="navDropdown">
+        <button class="dropdown-close" id="dropdownClose">&times;</button>
+        <div class="dropdown-content">
+            <!-- Menu Header with Search -->
+            <div class="menu-header">
+                <h2>Menu</h2>
+                <div class="menu-search-container">
+                    <input type="text" class="menu-search-input" id="menuSearchInput" placeholder="Search..." autocomplete="off">
+                    <button class="menu-search-btn" id="menuSearchSubmit">
+                        <img src="https://api.iconify.design/mdi/magnify.svg" alt="Search">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products with Submenu -->
+            <div class="dropdown-item">
+                <button class="dropdown-toggle" id="productsToggle">
+                    Products
+                    <span class="dropdown-arrow" id="productsArrow">▼</span>
+                </button>
+                <div class="dropdown-submenu" id="productsSubmenu">
+                    <a href="/products/tshirts" class="dropdown-submenu-link">T-Shirts</a>
+                    <a href="/products/hoodies" class="dropdown-submenu-link">Hoodies</a>
+                    <a href="/products/jackets" class="dropdown-submenu-link">Jackets</a>
+                    <a href="/products/pants" class="dropdown-submenu-link">Pants</a>
+                    <a href="/products/accessories" class="dropdown-submenu-link">Accessories</a>
+                </div>
+            </div>
+
+            <!-- Collections with Submenu -->
+            <div class="dropdown-item">
+                <button class="dropdown-toggle" id="collectionsToggle">
+                    Collections
+                    <span class="dropdown-arrow" id="collectionsArrow">▼</span>
+                </button>
+                <div class="dropdown-submenu" id="collectionsSubmenu">
+                    <a href="/collections/summer" class="dropdown-submenu-link">Summer 2024</a>
+                    <a href="/collections/winter" class="dropdown-submenu-link">Winter 2024</a>
+                    <a href="/collections/limited" class="dropdown-submenu-link">Limited Edition</a>
+                    <a href="/collections/essentials" class="dropdown-submenu-link">Essentials</a>
+                    <a href="/collections/new" class="dropdown-submenu-link">New Arrivals</a>
+                </div>
+            </div>
+
+            <a href="/about" class="nav-dropdown-link">About</a>
+            <a href="/contact" class="nav-dropdown-link">Contact</a>
+            <a href="/faq" class="nav-dropdown-link">FAQ</a>
+        </div>
+    </div>
+
+
+<div class="parent">
+    <div class="div1"></div>
+    <img src="TESTPICTURE.png" >
+    <div class="div2"></div>
+    <img src="TESTPICTURE2.png" >
+    <div class="div3"></div>
+    <img src="TESTPICTURE3.png" >
+</div>
+    
+<!-- T-Shirts Horizontal Scroll Section -->
+<section class="tshirts-section">
+    <div class="tshirts-header">
+        <div class="tshirts-header-scroll">
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+            <img src="NEWEST.png" class="tshirts-header-image" />
+        </div>
+    </div>
+
+    <div class="tshirts-scroll-container">
+        <div class="tshirts-scroll">
+            <button class="tshirt-item" data-product="classic-white">
+                <div class="tshirt-image">
+                    <img src="SUADEJACKETFRONT.png" alt="Classic White T-Shirt">
+                </div>
+                <div class="tshirt-info">
+                    <h3>SUADE JACKET</h3>
+                    <p>JACKET</p>
+                    <span class="tshirt-price">£79.99</span>
+                </div>
+            </button>
+
+            <button class="tshirt-item" data-product="midnight-black">
+                <div class="tshirt-image">
+                    <img src="HEINOUSPUPILS.png" alt="Black Tee">
+                </div>
+                <div class="tshirt-info">
+                    <h3>HEINOUS PUPILS T-SHIRT</h3>
+                    <p>DAILY TEE</p>
+                    <span class="tshirt-price">£34.99</span>
+                </div>
+            </button>
+
+            <button class="tshirt-item" data-product="navy-blue">
+                <div class="tshirt-image">
+                    <img src="HEINOUSPUPILSHOODIE.png" alt="Navy Blue T-Shirt">
+                </div>
+                <div class="tshirt-info">
+                    <h3>HEINOUS PUPILS TRACKSUIT</h3>
+                    <p>TRACKSUIT COLLECTION</p>
+                    <span class="tshirt-price">£114.99</span>
+                </div>
+            </button>
+
+            <button class="tshirt-item" data-product="heather-gray">
+                <div class="tshirt-image">
+                    <img src="SECRETSHOODIE.png" alt="Gray Tee">
+                </div>
+                <div class="tshirt-info">
+                    <h3>SECRETS HOODIE</h3>
+                    <p>HOODIE</p>
+                    <span class="tshirt-price">£59.99</span>
+                </div>
+            </button>
+
+            <button class="tshirt-item" data-product="crimson-red">
+                <div class="tshirt-image">
+                    <img src="SALUTEMEORSHOOTME.png" alt="Red Tee">
+                </div>
+                <div class="tshirt-info">
+                    <h3>SALUTE ME OR SHOOT ME</h3>
+                    <p>BEANIE</p>
+                    <span class="tshirt-price">£29.99</span>
+                </div>
+            </button>
+
+            <button class="tshirt-item" data-product="forest-green">
+                <div class="tshirt-image">
+                    <img src="BARBEDBEANIE.png" alt="Green Tee">
+                </div>
+                <div class="tshirt-info">
+                    <h3>BARBED BEANIE</h3>
+                    <p>BEANIE</p>
+                    <span class="tshirt-price">£29.99</span>
+                </div>
+            </button>
+        </div>
+    </div>
+</section>
+
+<div class="parent">
+    <div class="div1"></div>
+</div>
+
+<!-- Add this footer section before the closing </body> tag -->
+
+<footer class="luxury-footer">
+    <div class="footer-content">
+        <!-- Newsletter Section -->
+        <div class="footer-newsletter">
+            <h3>BECOME A MEMBER</h3>
+            <p>DONT BE LATE FOR THE NEXT DROP</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/shipping">Shipping Info</a></li>
+                    <li><a href="/returns">Returns & Exchanges</a></li>
+                    <li><a href="/size-guide">Size Guide</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                </div>
+                <p class="footer-location">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    HELSINKI, FINLAND
+                </p>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <p>&copy; 2024 FELOEN. All rights reserved.</p>
+            </div>
+            <div class="footer-bottom-center">
+                <img src="FELOEN.png" alt="FELOEN" class="footer-logo">
+            </div>
+            <div class="footer-bottom-right">
+                <a href="/privacy">Privacy Policy</a>
+                <span>•</span>
+                <a href="/terms">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+</body>
+</html>
+

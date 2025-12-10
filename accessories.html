@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories - FELOEN</title>
+    <link rel="stylesheet" href="../css/vscode.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <script src="../js/vscode.js" defer></script>
+    <script src="../js/products.js" defer></script>
+</head>
+<body>
+<header>
+    <div id="banner">
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+        <img src="../FELOEN.png" class="logo" />
+    </div>
+    <button class="fixed-menu-btn" id="fixedMenuBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+    <div class="slide-panel" id="slidePanel">
+        <div class="slide-panel-content">
+            <div class="slide-panel-section">
+                <a href="../index.html" class="slide-panel-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="../checkout.html" class="slide-panel-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span>Cart</span>
+                    <span class="slide-panel-badge" id="slidePanelCartCount">0</span>
+                </a>
+            </div>
+            <div class="slide-panel-section">
+                <a href="tshirts.html" class="slide-panel-sublink">T-Shirts</a>
+                <a href="hoodies.html" class="slide-panel-sublink">Hoodies</a>
+                <a href="jackets.html" class="slide-panel-sublink">Jackets</a>
+                <a href="pants.html" class="slide-panel-sublink">Pants</a>
+                <a href="accessories.html" class="slide-panel-sublink">Accessories</a>
+            </div>
+            <div class="slide-panel-section">
+                <a href="/collections/summer" class="slide-panel-sublink">Summer 2024</a>
+                <a href="/collections/winter" class="slide-panel-sublink">Winter 2024</a>
+                <a href="/collections/limited" class="slide-panel-sublink">Limited Edition</a>
+                <a href="/collections/essentials" class="slide-panel-sublink">Essentials</a>
+                <a href="/collections/new" class="slide-panel-sublink">New Arrivals</a>
+            </div>
+            <div class="slide-panel-section">
+                <a href="/about" class="slide-panel-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    <span>About</span>
+                </a>
+                <a href="/contact" class="slide-panel-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+        <button class="slide-panel-close" id="slidePanelClose">&times;</button>
+    </div>
+    <div class="panel-overlay" id="panelOverlay"></div>
+</header>
+<main class="products-main">
+    <div class="products-container">
+        <div class="products-header">
+            <h1>Accessories</h1>
+            <p>Complete your look with our accessories</p>
+        </div>
+        <div class="products-filters">
+            <div class="filter-group">
+                <label>Sort By:</label>
+                <select id="sortFilter">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">Newest</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Type:</label>
+                <select id="typeFilter">
+                    <option value="all">All Types</option>
+                    <option value="hat">Hats</option>
+                    <option value="bag">Bags</option>
+                    <option value="belt">Belts</option>
+                    <option value="socks">Socks</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Color:</label>
+                <select id="colorFilter">
+                    <option value="all">All Colors</option>
+                    <option value="black">Black</option>
+                    <option value="white">White</option>
+                    <option value="gray">Gray</option>
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                </select>
+            </div>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+    </div>
+</main>
+<div class="product-modal" id="productModal">
+    <div class="product-modal-content">
+        <button class="product-modal-close" id="productModalClose">&times;</button>
+        <div class="product-modal-grid">
+            <div class="product-modal-image">
+                <img id="modalProductImage" src="" alt="">
+            </div>
+            <div class="product-modal-info">
+                <h2 id="modalProductName"></h2>
+                <p class="product-modal-price" id="modalProductPrice"></p>
+                <p class="product-modal-description" id="modalProductDescription"></p>
+                <div class="product-modal-options">
+                    <div class="option-group">
+                        <label>Color:</label>
+                        <div class="color-selector" id="colorSelector"></div>
+                    </div>
+                    <div class="option-group">
+                        <label>Quantity:</label>
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="qtyMinus">-</button>
+                            <input type="number" id="quantity" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" id="qtyPlus">+</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
