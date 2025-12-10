@@ -7,7 +7,7 @@ banner.style.alignItems = 'center';
 
 for (let i = 0; i < 20; i++)  {
     let logo = document.createElement('img');
-    logo.src = "FELOEN.png";
+    logo.src = "assests/png/FELOEN.png";
     logo.style.width = '160px';
     logo.style.height = '120px'; 
     logo.style.marginRight = '40px';

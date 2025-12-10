@@ -9,8 +9,8 @@ const productData = {
         category: 'JACKETS',
         price: '£80',
         images: [
-            'SUADEJACKETFRONT.png',
-            'SUADEJACKETBACK.png',
+            'assests/png/SUADEJACKETFRONT.png',
+            'assests/png/SUADEJACKETBACK.png',
             'https://via.placeholder.com/400x500/ffffff/000000?text=White+Tee+Side',
             'https://via.placeholder.com/400x500/ffffff/000000?text=White+Tee+Detail'
         ]
@@ -20,7 +20,7 @@ const productData = {
         category: 'T-Shirts',
         price: '£34.99',
         images: [
-            'HEINOUSPUPILS.png',
+            'assests/png/HEINOUSPUPILS.png',
             'https://schoffa.com/cdn/shop/files/T-Shirt-Black_Back.png?v=1713953944&width=1024',
             'https://via.placeholder.com/400x500/000000/ffffff?text=Black+Tee+Side',
             'https://via.placeholder.com/400x500/000000/ffffff?text=Black+Tee+Detail'
@@ -32,9 +32,9 @@ const productData = {
         price: '£114.99',
         description: 'PART OF THE "HEINOUS PUPILS COLLECTION"',
         images: [
-            'HEINOUSPUPILSHOODIE.png',
-            'HEINOUSPUPILSBOTTOMS.png',
-            'HEINOUSPUPILSBOTTOMSBACK.png',
+            'assests/png/HEINOUSPUPILSHOODIE.png',
+            'assests/png/HEINOUSPUPILSBOTTOMS.png',
+            'assests/png/HEINOUSPUPILSBOTTOMSBACK.png',
             'https://via.placeholder.com/400x500/1e3a8a/ffffff?text=Navy+Tee+Detail'
         ]
     },
@@ -44,7 +44,7 @@ const productData = {
         price: '£59.99',
         description: 'Relaxed fit gray tee made from premium cotton blend. Soft, comfortable, and versatile.',
         images: [
-            'SECRETSHOODIE.png',
+            'assests/png/SECRETSHOODIE.png',
             'https://via.placeholder.com/400x500/6b7280/ffffff?text=Gray+Tee+Back',
             'https://via.placeholder.com/400x500/6b7280/ffffff?text=Gray+Tee+Side',
             'https://via.placeholder.com/400x500/6b7280/ffffff?text=Gray+Tee+Detail'
@@ -56,7 +56,7 @@ const productData = {
         price: '£29.99',
         description: 'Bold statement piece in vibrant crimson red. Stand out with confidence and style.',
         images: [
-            'SALUTEMEORSHOOTME.png',
+            'assests/png/SALUTEMEORSHOOTME.png',
             'https://via.placeholder.com/400x500/dc2626/ffffff?text=Red+Tee+Back',
             'https://via.placeholder.com/400x500/dc2626/ffffff?text=Red+Tee+Side',
             'https://via.placeholder.com/400x500/dc2626/ffffff?text=Red+Tee+Detail'
@@ -68,7 +68,7 @@ const productData = {
         price: '£29.99',
         description: 'Nature-inspired forest green tee. Eco-friendly materials and timeless design.',
         images: [
-            'BARBEDBEANIE.png',
+            'assests/png/BARBEDBEANIE.png',
             'https://via.placeholder.com/400x500/16a34a/ffffff?text=Green+Tee+Back',
             'https://via.placeholder.com/400x500/16a34a/ffffff?text=Green+Tee+Side',
             'https://via.placeholder.com/400x500/16a34a/ffffff?text=Green+Tee+Detail'
